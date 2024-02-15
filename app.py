@@ -82,10 +82,13 @@ def main():
 
     with st.sidebar:
         st.subheader("ASISTENTES-IA-GPT")
+        
         pdf_docs = st.file_uploader(
-            "Sube tus PDFs y da click en 'Procesar'", accept_multiple_files=True)
+            "Sube tus PDFs y da click en 'Procesar' Los archivos que subas solo seran procesados en tu computadora y se borraran automaticamente cuando cierre la aplicacion.", accept_multiple_files=True)
+        
         if st.button("Procesar"):
             with st.spinner("Processing"):
+        
                 # get pdf text
                 raw_text = get_pdf_text(pdf_docs)
 
